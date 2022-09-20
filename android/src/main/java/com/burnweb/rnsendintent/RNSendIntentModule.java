@@ -853,6 +853,20 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
         }
     }
 
+    @ReactMethod
+    public void getDefaultBrowser() {
+        try {
+            Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://"));  
+            ResolveInfo resolveInfo = getPackageManager().resolveActivity(browserIntent,PackageManager.MATCH_DEFAULT_ONLY);
+
+            // This is the default browser's packageName
+            String packageName = resolveInfo.activityInfo.packageName;
+            promise.resolve(packageName);
+        } catch (Exception e) {
+            promise.resolve('')
+        }
+    }
+
     private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
       @Override
       public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {

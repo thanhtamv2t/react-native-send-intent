@@ -73,6 +73,7 @@ declare namespace SendIntentAndroid {
   const requestIgnoreBatteryOptimizations: () => Promise<boolean>
   const showIgnoreBatteryOptimizationsSettings: () => void
   const openAppWithUri: (intentUri: string, extras?: { [index: string]: string }) => Promise<boolean>
+  const getDefaultBrowser: () => Promise<string>
   const TEXT_PLAIN: unique symbol
   const TEXT_HTML: unique symbol
 }

@@ -126,6 +126,10 @@ var SendIntentAndroid = {
     openAppWithUri(intentUri, extras) {
         return RNSendIntentAndroid.openAppWithUri(intentUri, extras || {});
     },
+    getDefaultBrowser() {
+        return RNSendIntentAndroid.getDefaultBrowser();
+    },
+    
 };
 
 module.exports = SendIntentAndroid;
