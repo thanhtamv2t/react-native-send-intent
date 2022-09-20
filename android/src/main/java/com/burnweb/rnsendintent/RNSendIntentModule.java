@@ -854,7 +854,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void getDefaultBrowser() {
+    public void getDefaultBrowser(final Promise promise) {
         try {
             Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://"));  
             ResolveInfo resolveInfo = getPackageManager().resolveActivity(browserIntent,PackageManager.MATCH_DEFAULT_ONLY);
